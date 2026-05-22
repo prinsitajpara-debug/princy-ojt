@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     // Build path to JSON file
     const filePath = path.join(__dirname, "users.json");
 
-    // Read file asynchronously (non-blocking)
+    // Read file asynchronously
     fs.readFile(filePath, "utf-8", (err, data) => {
       if (err) {
         res.writeHead(500, { "Content-Type": "application/json" });
