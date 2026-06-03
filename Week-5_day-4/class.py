@@ -23,7 +23,7 @@ print(s2.name)
 
 #class attritube
 class Student:
-    school = "ABC School"   # class attribute
+    school = "ABC School"  
 
     def __init__(self, name):
         self.name = name

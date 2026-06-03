@@ -1,3 +1,4 @@
+#duplicate number count
 from collections import Counter
 
 arr = [1, 2, 3, 2, 1, 4, 5, 5, 5]
