@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin UI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <h1>Admin Dashboard</h1>
+        <p>Manage users, roles, and permissions from a simple UI.</p>
+      </header>
+
+      <div class="cards">
+        <section class="card">
+          <h2>Auth</h2>
+          <div class="form-row">
+            <label for="register-username">Register - Username</label>
+            <input id="register-username" type="text" placeholder="Username" />
+          </div>
+          <div class="form-row">
+            <label for="register-email">Register - Email</label>
+            <input id="register-email" type="email" placeholder="Email" />
+          </div>
+          <div class="form-row">
+            <label for="register-password">Register - Password</label>
+            <input id="register-password" type="password" placeholder="Password" />
+          </div>
+          <button id="register-submit" class="btn">Register</button>
+
+          <hr />
+
+          <div class="form-row">
+            <label for="login-email">Login - Email</label>
+            <input id="login-email" type="email" placeholder="Email" />
+          </div>
+          <div class="form-row">
+            <label for="login-password">Login - Password</label>
+            <input id="login-password" type="password" placeholder="Password" />
+          </div>
+          <button id="login-submit" class="btn">Login</button>
+
+          <hr />
+
+          <div class="form-row">
+            <label for="change-old">Old password</label>
+            <input id="change-old" type="password" placeholder="Old password" />
+          </div>
+          <div class="form-row">
+            <label for="change-new">New password</label>
+            <input id="change-new" type="password" placeholder="New password" />
+          </div>
+          <button id="change-submit" class="btn">Change password</button>
+
+          <hr />
+
+          <button id="me-button" class="btn">Get current user (/auth/me)</button>
+        </section>
+        <section class="card">
+          <h2>User list</h2>
+          <button id="fetch-users" class="btn">Load users</button>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="user-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Assign role</h2>
+          <div class="form-row">
+            <label for="assign-role-user">User ID</label>
+            <input id="assign-role-user" type="number" placeholder="User ID" value="1" />
+          </div>
+          <div class="form-row">
+            <label for="assign-role-role">Role ID</label>
+            <input id="assign-role-role" type="number" placeholder="Role ID" value="2" />
+          </div>
+          <button id="role-submit" class="btn">Assign role</button>
+        </section>
+
+        <section class="card">
+          <h2>Assign permission</h2>
+          <div class="form-row">
+            <label for="assign-permission-role">Role ID</label>
+            <input id="assign-permission-role" type="number" placeholder="Role ID" value="1" />
+          </div>
+          <div class="form-row">
+            <label for="assign-permission-permission">Permission ID</label>
+            <input id="assign-permission-permission" type="number" placeholder="Permission ID" value="1" />
+          </div>
+          <div class="form-row">
+            <label for="assign-permission-user">Assign to user ID</label>
+            <input id="assign-permission-user" type="number" placeholder="Optional user ID" />
+          </div>
+          <button id="permission-submit" class="btn">Assign permission</button>
+        </section>
+
+        <section class="card">
+          <h2>Result</h2>
+          <div class="output" id="result-output">Ready.</div>
+        </section>
+      </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
